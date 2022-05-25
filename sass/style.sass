@@ -1,0 +1,350 @@
+// Базовые настройки 
+@import 'reset'
+
+//Шрифты
+@import 'fonts'
+
+// Шапка 
+@import 'global'
+
+// header
+.header
+
+    &__wrap
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 10px 0
+
+    &__nav
+        display: flex
+        align-items: center
+
+    &__menu
+        +normal
+        display: flex
+        margin-right: 30px
+
+    &__item:not(:last-child)
+        margin-right: 20px
+
+    &__button
+        +normal
+        display: flex
+
+    &__btn-text
+        line-height: 22.4px
+        margin: 0 8px
+
+    &__btn-counter
+        line-height: 18px
+        background-color: #fff
+        color: #3A5F56
+        border-radius: 50%
+        padding: 0 6px
+
+// about
+.about
+    background: url('../image/bg_main.png')
+    background-repeat: no-repeat
+    background-position: center
+    height: 100%
+    background-size: cover
+
+    &__wrap
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding-top: 100px
+
+    &__left
+        +normal
+        max-width: 534px
+        text-align: left
+
+    &__title
+        +title
+        color: #3A5F56
+        word-wrap: break-word
+
+    &__text
+        margin: 11px 0 17px
+        word-wrap: break-word
+
+// servise
+.service
+
+    &__wrap
+        padding-top: 134px
+        display: flex
+        align-items: center
+        flex-direction: column
+        justify-content: center
+
+    &__title
+        +title
+        font-size: 32px
+        position: relative
+        justify-content: center
+        display: flex
+        margin-bottom: 8px
+        color: #3A5F56
+
+        &::before
+            position: absolute
+            content: ''
+            top: -40px
+            width: 160px
+            height: 19px
+            background-image: url('../image/line-designs.svg')
+            background-position: center
+            background-repeat: no-repeat
+
+    &__text
+        +normal
+        max-width: 591px
+        word-wrap: break-word
+
+    //service__card
+
+    &__inner
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        margin-top: 40px
+    &__card
+        padding: 30px 39px 51px 30px
+        margin: 0 16px 16px 16px
+        border-radius: 16px
+        background: #F4F3F0
+        text-align: left
+        &:hover
+            transform: scale(1.04)
+
+    &__card-image
+        width: 48px
+        height: 48px
+        background-color: #E2E4E1
+        border-radius: 50%
+        align-items: center
+        justify-content: center
+        display: flex
+
+    &__card-title
+        +title
+        color: #3A5F56
+        line-height: 28.8px
+        font-size: 24px
+        margin: 9px 0 6px 0
+
+    &__card-text
+        +normal
+        max-width: 310px
+        word-wrap: break-word
+        margin: 0 0 17px 0
+
+    &__card-btn
+        +normal
+        background: transparent
+        padding: 0
+        color: #3A5F56
+        border-radius: 0
+        line-height: 24px
+        font-size: 17px
+        &:hover
+            background: #3a5f5656
+
+//preset
+.preset
+    &__wrap
+        padding-top: 134px
+        display: flex
+        align-items: center
+        flex-direction: column
+        justify-content: center
+
+    &__title
+        +title
+        font-size: 32px
+        position: relative
+        justify-content: center
+        display: flex
+        margin-bottom: 8px
+        color: #DB343B
+
+        &::before
+            position: absolute
+            content: ''
+            top: -40px
+            width: 160px
+            height: 19px
+            background-image: url('../image/line-designs.svg')
+            background-position: center
+            background-repeat: no-repeat
+
+    &__text
+        +normal
+        max-width: 591px
+        word-wrap: break-word
+
+    //card__preset
+
+    &__inner
+        margin-top: 40px
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+
+    .preset__image
+        width: 100%
+
+    &__card
+        display: flex
+        flex-direction: column
+        text-align: left
+        border-radius: 10px
+        margin: 0 16px 16px 16px
+        width: 100%
+        background: #F4F3F0
+
+        &:hover
+            transform: scale(1.04)
+
+    &__card-title
+        +title
+        padding: 0 0 0 30px
+        font-size: 24px
+        color: #3A5F56
+
+    &__card-text
+        +normal
+        padding: 0 0 30px 30px
+        color: #3A5F56
+        max-width: 308px
+
+// footer
+.footer
+    bottom: 1
+    padding: 100px 0 100px 0
+    background: #292C32
+
+    &__wrap
+        display: flex
+        flex-direction: column
+
+    &__inner
+        display: flex
+        align-items: top
+        margin-top: 75px
+
+    &__nav
+        display: flex
+        flex-wrap: wrap
+        justify-content: start
+
+    &__menu
+        align-items: center
+        text-align: left
+        margin-bottom: 30px
+        max-width: 210px
+        width: 100%
+
+    &__menu-title
+        +normal
+        text-transform: uppercase
+        font-size: 14px
+        display: block
+        margin-bottom: -3px
+        color: #B87D58
+
+    &__item
+        margin-top: 13px
+        word-wrap: break-word
+
+    &__item-link
+        +normal
+        line-height: 22px
+        color: #fff
+
+    //footer__letter
+
+    &__letter
+        position: relative
+        text-align: left
+        display: flex
+        flex-direction: column
+
+    &__letter-title
+        +normal
+        text-transform: uppercase
+        font-size: 14px
+        color: #B87D58
+
+    &__letter-text
+        +normal
+        color: #fff
+        margin-bottom: 8px
+        max-width: 404px
+        word-wrap: break-word
+
+    &__input
+        padding-left: 25px
+        padding-right: 90px
+        border-radius: 10px
+        max-width: 458px
+        height: 53px
+        width: 100%
+        border: 0
+
+    &__input:focus
+        outline: 0
+
+    &__input-btn
+        +normal
+        position: absolute
+        cursor: pointer
+        margin: 6px
+        padding: 12px 10px
+        right: 0
+        border-radius: 10px
+        border: 0
+        background: #292C32
+        color: #fff
+
+@media screen and ( max-width: 1110px )
+    .container
+        max-width: 1440px
+        margin: 0 auto
+        padding: 0px 20px
+
+    .about__wrap
+        padding-top: 0
+
+@media screen and ( max-width: 920px )
+
+    .about__wrap
+        justify-content: center
+
+    .container
+        margin: 0
+
+    .about
+
+        padding: 20px 0
+        color: #fff
+        background: #000
+        background: url('../image/content/about_mobile-bg.png')
+        height: 100%
+        background-repeat: no-repeat
+        background-position: center
+        background-size: cover
+
+    .about__title
+        color: #fff
+
+    .about__button
+        background-color: #fff
+        color: #3A5F56
+
+    .about__right
+        display: none
