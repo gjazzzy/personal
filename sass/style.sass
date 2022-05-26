@@ -8,58 +8,63 @@
 @import 'global'
 
 // header
-
-// header__hamburger-btn
-.header__hamburger-btn
-    background-color: #ff7e7e
-    display: flex
-    justify-content: center
-    align-items: center
-
 .header__menu-btn
-    display: block
-    width: 50px
-    height: 50px
-    background-color: #fbfbfb
-    position: relative
+    background: transparent
+    padding: 0
 
-.header__menu-btn span,
-.header__menu-btn span::after,
-.header__menu-btn span::before
+.modal_menu-close
     position: absolute
-    top: 50%
-    margin-top: -1.5px
-    left: 50%
-    margin-left: -17.5px
-    width: 35px
-    height: 3px
-    background-color: #000000
-    border-radius: 10px
+    left: 0
+    padding: 0
+    background: transparent
 
-.header__menu-btn span::after, .header__menu-btn span::before
-    content: " "
-    display: block
-    transition: 0.5s
+.header__modal
+    position: fixed
+    display: flex
+    z-index: 1
+    top: 0
+    right: 0
+    bottom: 0
+    height: 100vh
+    background-color: #ffffff
+    align-items: center
+    flex-direction: column
+    width: 60%
+    box-shadow: 1px 0px 20px black
+    transition: all 0.5s
+    &.header__modal--close
+        transform: translateX(1000%)
 
-.header__menu-btn span::before
-    transform: translateY(-9px)
+.modal__menu
+    +normal
+    font-size: 20px
+    margin-top: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
 
-.header__menu-btn span::after
-    transform: translateY(9px)
+.modal__item:not(:last-child)
+    margin-bottom: 40px
+    margin-right: 20px
 
-.header__menu-btn_active span
-    height: 1
-    transform: rotate(0deg)
+.modal__button
+    +normal
+    margin-top: 40px
+    display: flex
+    align-items: center
+    justify-content: center
 
-.header__menu-btn_active span:before
-    transform: rotate(-45deg)
-    transform-origin: left bottom
-    width: 10px
+.modal__btn-text
+    line-height: 22.4px
+    margin: 0 8px
 
-.header__menu-btn_active span:after
-    transform: rotate(45deg)
-    transform-origin: left top
-    width: 10px
+.modal__btn-counter
+    line-height: 18px
+    background-color: #fff
+    color: #3A5F56
+    border-radius: 50%
+    padding: 0 6px
 
 .header
 
@@ -360,6 +365,10 @@
         background: #292C32
         color: #fff
 
+@media screen and ( min-width: 730px )
+    .header__menu-btn
+        display: none
+
 @media screen and ( max-width: 1110px )
     .container
         max-width: 1440px
@@ -370,7 +379,6 @@
         padding-top: 0
 
 @media screen and ( max-width: 920px )
-
     .about__wrap
         justify-content: center
 
@@ -378,7 +386,6 @@
         margin: 0
 
     .about
-
         padding: 20px 0
         color: #fff
         background: #000
@@ -400,9 +407,13 @@
 
 @media screen and ( max-width: 730px )
 
+    .header__nav
+        display: none
+
     .footer__inner
         display: flex
         flex-direction: column
         align-items: center
     .footer__nav
         justify-content: space-between
+        align-items: center

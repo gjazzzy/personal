@@ -7,6 +7,7 @@
 body {
   text-align: center;
   background: #ffffff;
+  overflow-x: none;
 }
 
 img {
@@ -83,78 +84,105 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0px 120px;
 }
 
-.header__hamburger-btn {
-  background-color: #ff7e7e;
+.header__menu-btn {
+  background: transparent;
+  padding: 0;
+}
+
+.modal_menu-close {
+  position: absolute;
+  left: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.header__modal {
+  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  background-color: #ffffff;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60%;
+  -webkit-box-shadow: 1px 0px 20px black;
+          box-shadow: 1px 0px 20px black;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
-.header__menu-btn {
-  display: block;
-  width: 50px;
-  height: 50px;
-  background-color: #fbfbfb;
-  position: relative;
+.header__modal.header__modal--close {
+  -webkit-transform: translateX(1000%);
+          transform: translateX(1000%);
 }
 
-.header__menu-btn span,
-.header__menu-btn span::after,
-.header__menu-btn span::before {
-  position: absolute;
-  top: 50%;
-  margin-top: -1.5px;
-  left: 50%;
-  margin-left: -17.5px;
-  width: 35px;
-  height: 3px;
-  background-color: #000000;
-  border-radius: 10px;
+.modal__menu {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  font-size: 20px;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.header__menu-btn span::after, .header__menu-btn span::before {
-  content: " ";
-  display: block;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+.modal__item:not(:last-child) {
+  margin-bottom: 40px;
+  margin-right: 20px;
 }
 
-.header__menu-btn span::before {
-  -webkit-transform: translateY(-9px);
-          transform: translateY(-9px);
+.modal__button {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.header__menu-btn span::after {
-  -webkit-transform: translateY(9px);
-          transform: translateY(9px);
+.modal__btn-text {
+  line-height: 22.4px;
+  margin: 0 8px;
 }
 
-.header__menu-btn_active span {
-  height: 1;
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-}
-
-.header__menu-btn_active span:before {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  -webkit-transform-origin: left bottom;
-          transform-origin: left bottom;
-  width: 10px;
-}
-
-.header__menu-btn_active span:after {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-transform-origin: left top;
-          transform-origin: left top;
-  width: 10px;
+.modal__btn-counter {
+  line-height: 18px;
+  background-color: #fff;
+  color: #3A5F56;
+  border-radius: 50%;
+  padding: 0 6px;
 }
 
 .header__wrap {
@@ -653,6 +681,12 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
+@media screen and (min-width: 730px) {
+  .header__menu-btn {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1110px) {
   .container {
     max-width: 1440px;
@@ -696,6 +730,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media screen and (max-width: 730px) {
+  .header__nav {
+    display: none;
+  }
   .footer__inner {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -712,6 +749,9 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 /*# sourceMappingURL=style.css.map */
